@@ -2,16 +2,20 @@
 
 //Programa feito por Eric Azevedo de Olieira 
 //Processo seletivo de .net LUBY
+//Data de inicio 16/02/2022 
+//Data de finalizacao 17/02/2022
 class LogicaPro
 {
 
+    //Inciod funcao main
     public static void Main()
     {
         Mostraropcoes();
-    }
+    }//fim main
 
 
-
+    //inicio CalcularFatorial
+    //parametro inteiro e nao ira retornar nada
     public static void CalcularFatorial(int numero)
     {
         int fatorial = 1;
@@ -22,15 +26,17 @@ class LogicaPro
             
         }
         Console.WriteLine(fatorial);
-    }
+    }//fim CalcularFatorial
 
+    //inicio CalcularPremio
+    //Parametros Double , String , e inteiro sem nenhum retorno
     public static void CalcularPremio(double valor , string tipo, int fator )
     {
         double calculo = 0;
         if(valor > 0) {
             if (tipo.Equals("basic"))
             {
-                if (fator != null&& fator >0)
+                if (fator >0)
                 {
                     calculo = valor*fator;
                 }
@@ -41,7 +47,7 @@ class LogicaPro
             }
             else if (tipo.Equals("vip"))
             {
-                if (fator != null && fator > 0)
+                if (fator > 0)
                 {
                     calculo = valor * fator;
                 }
@@ -53,7 +59,7 @@ class LogicaPro
             }
             else if (tipo.Equals("premium"))
             {
-                if (fator != null && fator > 0)
+                if (fator > 0)
                 {
                     calculo = valor * fator;
                 }
@@ -65,7 +71,7 @@ class LogicaPro
             }
             else if (tipo.Equals("deluxe"))
             {
-                if (fator != null && fator > 0)
+                if (fator > 0)
                 {
                     calculo = valor * fator;
                 }
@@ -76,7 +82,7 @@ class LogicaPro
             }
             else
             {
-                if (fator != null && fator > 0)
+                if (fator > 0)
                 {
                     calculo = valor * fator;
                 }
@@ -95,8 +101,10 @@ class LogicaPro
             Console.WriteLine("Valor nao permitido");
             Console.WriteLine("");
         }
-    }
+    }//Fim funcao CalcularPremio
 
+    //Inicio Funcao ContarNumeroPrimos
+    //Parametro inteiro , ira retornar nada
     public static void ContarNumerosPrimos(int numero)
     {
         int quantidadePrimos = 0;
@@ -119,8 +127,10 @@ class LogicaPro
         Console.WriteLine("A quantidade de numero primos e = "+quantidadePrimos);
 
         
-    }
+    }//Fim Funcao ContarNumerosPrimos
 
+    //Inicio CalcularVogais
+    //Paramentro string , sem nenhum retorno 
     public static void CalcularVogais(string frase)
     {
         int quantidade = 0;
@@ -133,8 +143,10 @@ class LogicaPro
              }
         }
         Console.WriteLine("A quantidade de vogais e == " + quantidade);
-    }
+    }//Fim Funcao ClauclarVogais
 
+    //Inicio funcao CalcularValorComDescontoFormatado
+    //Paramentro , o ponteiro de uma string , e uma string , sem nenhum retorno 
     public static void CalcularValorComDescontoFormatado(ref string valor , string desconto)
     {
         string descontoLimpo = "";
@@ -185,12 +197,14 @@ class LogicaPro
             mostrarNaTela += tratarParaMostrar;
         }
         Console.WriteLine("O Valor total com o desconto sera  =" + mostrarNaTela );
-       
-        
-
-    }
 
 
+
+    }//FIm funcao CalcularValorComDescontoFormatado
+
+
+    //inicio funcao CalcularDiferencaData
+    //parametros 2 string , sem nenhum retorno
     public static void CalcularDiferencaData(string data1 , string data2)
     {
         
@@ -218,9 +232,11 @@ class LogicaPro
         int totalDias = (DateTime.Parse(dataReformada2).Subtract(DateTime.Parse(dataReformada1))).Days;
 
         Console.WriteLine("A diferenca entra as duas datas sao = " + totalDias);
-    }
+    } // fim funcao CalcularDiferencaData
 
 
+    //Inicio funcao ObterElementosPares
+    //Parametros ,vetor de inteiros , com o retorno sendo um vetor de inteiros
     public static int[] ObterElementosPares(int[] vetor)
     {
         int contador = 0;
@@ -243,9 +259,11 @@ class LogicaPro
             }
         }
         return vetorPares;
-    }
+    }//Inicio funcao ObterElementosPares
 
 
+    //Inicio funcao BuscarPessoa
+    //Paramentos , um vetor de string , e uma string , sem nenhum retorno
     public static void BuscarPessoa(string[] vector , string nome)
     {
         int contador = 0;
@@ -278,8 +296,10 @@ class LogicaPro
         {
             Console.WriteLine("Nao existe ninguem com esse nome");
         }
-    }
+    }//Fim funcao BuscarPessoa
 
+    //Inicio Funcao TransformarEmMatriz
+    //Parametros string , sem nenhum retorno
     public static void TransformarEmMatriz(string vetor)
     {
         int contador = 0;
@@ -313,9 +333,10 @@ class LogicaPro
             }
             Console.WriteLine("");
         }
-    }
+    }//Fim Funcao TransformarEmMatriz
 
-
+    //Inicio funcao ObterElementosFaltantes
+    //Parametro 2 vetor de inteiros , sem nenhum retorno
     public static void ObterElementosFaltantes(int[] vetor1, int[] vetor2)
     {
         int contador = 0;
@@ -447,120 +468,146 @@ class LogicaPro
 
 
         }
-        
 
 
-    }
 
+    }//Fim Funcao ObterElementosFaltantes
+
+    
+    //Inicio Funcao MostrarOpcoes
+    //Sem passagem de parametro , e sem retorno
     public static void Mostraropcoes()
     {
         int parar = 0;
-        do
+        try
         {
-           //
-            Console.WriteLine("\nLogica de Programacao");
-            Console.WriteLine("1- Calcular Fatorial");
-            Console.WriteLine("2-Calcular o valor total do Premio");
-            Console.WriteLine("3-Contar os numeros primos");
-            Console.WriteLine("4-Contar a quantidade de vogais dentro da String");
-            Console.WriteLine("5-Aplicar uma porcentagem de desconto");
-            Console.WriteLine("6-Ordenar e calcular a diferenca de duas datas");
-            Console.WriteLine("7-Retornar vetor com todos os elementos pares");
-            Console.WriteLine("8-Nuscar elementos que contem o valor informado");
-            Console.WriteLine("9-Array de array");
-            Console.WriteLine("10-Comparacao de vetores e criar um novo com elementos faltantes");
-            Console.WriteLine("0-Sair");
-            Console.WriteLine("Gostaria de ver qual exercicio? ");
-            parar = Convert.ToInt32(Console.ReadLine());
-            switch (parar)
+            do
             {
-                case 0:
-                    Console.WriteLine("Fim do Programa");
-                    break;
-                case 1:
-                    Console.Clear();
-                    Console.WriteLine("Gostaria de calcular que fatorial? ");
-                    CalcularFatorial(Convert.ToInt32(Console.ReadLine()));
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine("Qual o valor do Premio?  ");
-                    double valorPremio=Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Qual o tipo de Premio ");
-                    string tipo=Console.ReadLine();
-                    Console.WriteLine("Algum fator para o calculo? Se nao coloque 0");
-                    CalcularPremio(valorPremio,tipo,Convert.ToInt32(Console.ReadLine()));
-                    break;
+                //
+                Console.WriteLine("\nLogica de Programacao");
+                Console.WriteLine("1- Calcular Fatorial");
+                Console.WriteLine("2-Calcular o valor total do Premio");
+                Console.WriteLine("3-Contar os numeros primos");
+                Console.WriteLine("4-Contar a quantidade de vogais dentro da String");
+                Console.WriteLine("5-Aplicar uma porcentagem de desconto");
+                Console.WriteLine("6-Ordenar e calcular a diferenca de duas datas");
+                Console.WriteLine("7-Retornar vetor com todos os elementos pares");
+                Console.WriteLine("8-Nuscar elementos que contem o valor informado");
+                Console.WriteLine("9-Array de array");
+                Console.WriteLine("10-Comparacao de vetores e criar um novo com elementos faltantes");
+                Console.WriteLine("0-Sair");
+                Console.WriteLine("Gostaria de ver qual exercicio? ");
+                parar = Convert.ToInt32(Console.ReadLine());
+                switch (parar)
+                {
+                    case 0:
+                        Console.WriteLine("Fim do Programa");
+                        break;
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("Gostaria de calcular que fatorial? ");
+                        CalcularFatorial(Convert.ToInt32(Console.ReadLine()));
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Qual o valor do Premio?  ");
+                        double valorPremio = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Qual o tipo de Premio ");
+                        string tipo = Console.ReadLine();
+                        if(tipo == null)
+                        {
+                            Console.WriteLine("Nao e aceito tipos nulos");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Algum fator para o calculo? Se nao coloque 0");
+                            CalcularPremio(valorPremio, tipo, Convert.ToInt32(Console.ReadLine()));
+                            break;
+                        }
+                        
 
 
-                case 3:
-                    Console.Clear();
-                    Console.WriteLine("Numero para verificar ");
-                    ContarNumerosPrimos(Convert.ToInt32(Console.ReadLine()));
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("Numero para verificar ");
+                        ContarNumerosPrimos(Convert.ToInt32(Console.ReadLine()));
 
-                    break;
+                        break;
 
-                case 4:
-                    Console.Clear();
-                    Console.WriteLine("String para ser verificada ");
-                    CalcularVogais(Console.ReadLine());
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("String para ser verificada ");
+                        string palavra = Console.ReadLine();
+                        if (palavra == null)
+                        {
+                            Console.WriteLine("Nao e permitido string nula");
+                        }
+                        else
+                        {
+                            CalcularVogais(palavra);
+                        }
+                        break;
 
-                    break;
+                    case 5:
+                        Console.Clear();
+                        string teste = "R$ 6.800,00";
+                        CalcularValorComDescontoFormatado(ref teste, "30%");
 
-                case 5:
-                    Console.Clear();
-                    string teste = "R$ 6.800,00";
-                    CalcularValorComDescontoFormatado(ref teste, "30%");
-
-                    break;
-
-
-                case 6:
-                    Console.Clear();
-                    CalcularDiferencaData("10122020", "25122020");
-                    break;
-
-                case 7:
-                    Console.Clear();
-                    int[] vetor = new int[] { 1, 2, 3, 4, 5 };
-                    int [] vetorPar = ObterElementosPares(vetor);
-                    Console.Write("Os valores pares do vetor sao = {");
-                    for (int i = 0; i < vetorPar.Length; i++)
-                    {
-                        Console.Write(vetorPar[i] + " ");
-                    }
-                    Console.WriteLine("}");
-
-                    break;
+                        break;
 
 
+                    case 6:
+                        Console.Clear();
+                        CalcularDiferencaData("10122020", "25122020");
+                        break;
 
-                case 8:
-                    Console.Clear();
-                    string[] vetorString = new string[] { "John Doe", "Jane Doe", "Alice Jones", "Bobby Louis", "Lisa Romero" };
-                    BuscarPessoa(vetorString, "Doe");
-                    BuscarPessoa(vetorString, "Alice");
-                    BuscarPessoa(vetorString, "James");
-                    break;
+                    case 7:
+                        Console.Clear();
+                        int[] vetor = new int[] { 1, 2, 3, 4, 5 };
+                        int[] vetorPar = ObterElementosPares(vetor);
+                        Console.Write("Os valores pares do vetor sao = {");
+                        for (int i = 0; i < vetorPar.Length; i++)
+                        {
+                            Console.Write(vetorPar[i] + " ");
+                        }
+                        Console.WriteLine("}");
+
+                        break;
 
 
 
+                    case 8:
+                        Console.Clear();
+                        string[] vetorString = new string[] { "John Doe", "Jane Doe", "Alice Jones", "Bobby Louis", "Lisa Romero" };
+                        BuscarPessoa(vetorString, "Doe");
+                        BuscarPessoa(vetorString, "Alice");
+                        BuscarPessoa(vetorString, "James");
+                        break;
 
 
-                case 9:
-                    Console.Clear();
-                    TransformarEmMatriz("1,2,3,4,5,6");
-                    break;
 
-                case 10:
-                    Console.Clear();
-                    int[] vetor1 = new int[] { 1, 2, 3,4,5 };
-                    int[] vetor2 = new int[] { 1, 2, 3 };
-                    ObterElementosFaltantes(vetor1, vetor2);
-                    break;
 
-            }
-        } while (parar != 0);
+
+                    case 9:
+                        Console.Clear();
+                        TransformarEmMatriz("1,2,3,4,5,6");
+                        break;
+
+                    case 10:
+                        Console.Clear();
+                        int[] vetor1 = new int[] { 1, 2, 3, 4, 5 };
+                        int[] vetor2 = new int[] { 1, 2, 3 };
+                        ObterElementosFaltantes(vetor1, vetor2);
+                        break;
+
+                }
+            } while (parar != 0);
+        }catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
        
     }
-}
+}//Fim  Funcao MostrarOpcoes
