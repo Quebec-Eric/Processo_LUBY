@@ -1,0 +1,70 @@
+Parte 2 SQL 
+Do programa de estágio incubadora ASP.NET Luby
+
+Candidato : Eric Azevedo de OLiveira 
+
+
+2.1 Crie uma query para selecionar todas as pessoas 'tabela_pessoa' e os respectivos eventos 'tabela_evento' o qual elas participam.
+
+SELECT tabela_pessoa.nome , tabela_evento.evento
+FROM tabela_pessoa , tabela_evento
+WHERE tabela_pessoa.id = tabela_evento.pessoa_id
+
+
+2.2 Crie uma query para selecionar todas as pessoas 'tabela_pessoa' com sobrenome 'Doe'.
+
+SELECT tabela_pessoa.nome
+FROM tabela_pessoa
+WHERE name LIKE '%Doe%'
+
+
+2.3 Crie uma query para adicionar um novo evento 'tabela_evento' e relacionar à pessoa 'Lisa Romero'.
+
+INSERT INTO tabela_eventos (id , evento , pessoa_id) 
+VALUES (5,'Evento E',5)
+
+
+2.4 Crie uma query para atualizar 'Evento D' na 'tabela_evento' e relacionar à pessoa 'Joh Doe'
+
+UPDATE tabela_eventos 
+SET pessoa_id =1
+WHERE tabela_evento.evento='Evento D'
+
+2.5 Crie uma query para remover o 'Evento B' na 'tabela_evento'.
+
+DELETE FROM tabela_eventos
+WHERE tabela_eventos.evento='Evento B';
+
+
+2.6 Crie uma query para remover todas as pessoas 'tabela_pessoa' que não possuem eventos 'tabela_evento' relacionados.
+
+
+DELETE * FROM tabela_pessoa LEFT JOIN tabela_eventos ON tabela_pessoa.id <> tabela_evento.pessoa_id
+
+
+
+2.7 Crie uma query para alterar a tabela 'tabela_pessoa' e adicionar a coluna 'idade' (int)
+
+ALTER TABLE tabela_pessoa ADD COLUMN idade INT NOT null
+
+
+2.8 Crie uma query para criar uma tabela chamada 'tabela_telefone' que pertence a uma pessoa com seguintes campos:
+
+CREATE TABLE tabela_telefone{
+  
+    id INT PRIMARY KEY,
+    telefone VARCHAR(200) NOT NULL,  
+    pessoa_id INT NOT NULL .
+    FOREIGN KEY (pessoa_id) REFERENCES tabela_pessoa(id) 	
+};
+
+
+2.9 Crie uma query para criar uma índice do tipo único na coluna telefone da 'tabela_telefone'.
+
+CREATE UNIQUE INDEX telefone_unico ON tabela_telefone(telefone);
+
+
+2.10 Crie uma query para remover a 'tabela_telefone'.
+
+
+DROP TABLE tabela_telefone
