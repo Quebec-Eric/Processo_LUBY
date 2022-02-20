@@ -1,0 +1,25 @@
+
+-Usuario
+O programa começa, quando o ele clicar no botão Iniciar, com isso o sistema ira mostrar todos as bebidas as quais a maquina esta vendendo. Ao escolher sua bebida o
+usuário ira escrever na caixa de texto qual o número da bebida desejada, sendo elas de 1 ate 4. Apertando o botão enviar o sistema ira mandar uma Query para o banco de
+dados pedindo todas as informações referentes aquela bebida, e com isso ira mostra na tela o nome da bebida com o seu preço, e ira perguntar se o usuário deseja efetuar o
+pagamento. Se o usuário clicar em ok(afirmando que deseja efetuar o pagamento) o sistema ira analisar se há a existência de estoque da bebida desejada, sendo que se não houver 
+no estoque o programa irá avisar e encerrar o programa, mas se existir no estoque o usuário poderá colocar na caixa de texto o valor em dinheiro. Se por um acaso o usuário colocar
+uma quantia menor que a do produto o programa ira avisar a quantia que falta para que possa comprar o refrigerante, e se colocar uma quantia maior ele ira efetuar a compra e 
+informa-lo a quantidade de troco.
+
+-Adiministrador
+O Administrador ira clicar no botão iniciar, e quando aparecer as opções de bebidas ele irá colocar na caixa de texto a opção 5 , que irá mostrar a quantidade de bebidas que estão em estoque
+e a contabilidade total de bebidas vendidas exibindo quantas de cada bebida foram vendidas.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Programa 
+
+A classe de bebidas se entroca dentro da pasta aplicação onde esta todo o programa em si, essa classe está contida todos os métodos como set e get do programa.
+
+A classe FROM1.cs esta contida a conexão do banco de dados com meu programa, sendo la a classe primordial para o funcionamento do programa.
+
+A classe Maquina.cs , esta contida algumas funções nas quais utilizes para melhorar a visualização do programa e a organização
+
+A classe Program, e o Main do meu programa que da origem na inicialização da classe form1
